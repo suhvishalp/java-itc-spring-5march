@@ -126,4 +126,16 @@ Spring Framework
 
     Spring Bean Definition 
     ----------------------
-        -   it is a configuration to describe how object should be created
+        - it is a configuration to describe how object should be created, initialized, destroyed etc. 
+        - Spring container will read this configuration and manage the objects accordingly
+       
+        - There are 3 ways to define spring beans /  configuration
+
+
+            a. using xml configuration 
+
+
+            b. using java configuration 
+
+
+            c. using java annotations 
