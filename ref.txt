@@ -1,0 +1,129 @@
+Vishal 
+
+Week1 - Spring Core 
+
+Week2 - Spring boot 
+
+
+Programming
+Language                    Library /packages                   Framework
+----------                  --------------                      ------------
+Java                        standard libraries                  Spring
+                              i.e util, io, 
+                                lang, jdbc,  etc
+
+                            3rd party libraries 
+                                - 
+
+python                      .....                               DJango / Flask
+
+C / C++                     ....
+
+JavaScript                  jQuery, bootstrap, etc.             Angular
+                            ReactJS 
+
+C# / VB                     ....                                .net Framework
+
+Go Lang                     ....
+
+    |                           |                                   |
+programming             Simplify the tasks                      standardize the process 
+capabitlities                                                   of developing the application
+
+
+
+Package Management tools / Dependency management / build tools
+----------------------------------------------------------- 
+    - Maven
+    - Gradle
+    - 
+    - 
+
+
+Spring Framework
+------------------
+    - The Spring Framework is a mature, powerful and highly flexible framework 
+        focused on building applications in Java.
+
+        Spring Modules : 
+
+            - Spring Core 
+                - Core (spring-core) is the core of the framework that power 
+                    features such as Inversion of Control and dependency injection.
+
+                    - Spring Beans
+                        - Beans (spring-beans) provides Beanfactory, which is a 
+                            sophisticated implementation of the factory pattern
+                    - spring context 
+                    - expression language
+
+            - Spring Web 
+
+            - Spring REST 
+
+            - Spring Security
+
+            - Spring DATA 
+
+            - Spring AOP
+
+            - Spring Cloud  
+
+            - Spring Boot 
+
+
+
+    Environment Setup 
+    ---------------------------
+        - java 8 or 11 
+        - Eclipse IDE       or     Spring Tool Suite        or Intelij Idea 
+        - mysql community server database
+
+
+
+
+    Common Terminologies / coding conventions 
+    ---------------------
+
+    BO - business objects 
+         - write code to represent business entities 
+            - ie. Customer, Order, Transaction, Supplier, etc.
+
+    Service classes 
+        - write code that represents business logic  
+            ie. CustomerService, OrderService, etc. 
+
+
+    Inversion of Control / IOC
+        - it is a process / mechanism to delegate the responsibility of creating objects 
+            to a "Container"
+
+
+    Dependency Injection
+        - Connecting objects with other objects / or “injecting” objects into other objects,
+
+    Spring Container
+        - it manages the life cycle of objects. 
+            - object creation 
+            - initialization 
+            - destroy
+
+    
+    Scope types 
+    ------------
+
+        1. singleton 
+            - this is the default scope container uses to create objects 
+
+        2. prototype 
+
+        3. request 
+
+        4. session 
+
+        5. application 
+
+
+    Spring Bean Definition 
+    ----------------------
+        -   it is a configuration to describe how object should be created
