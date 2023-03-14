@@ -70,6 +70,7 @@ Spring Framework
             - Spring Cloud  
 
             - Spring Boot 
+                - auto configuration
 
 
 
@@ -94,6 +95,24 @@ Spring Framework
             ie. CustomerService, OrderService, etc. 
 
 
+    DAO - Data access objects 
+        - write code to communicate with db, to perform all the db related operations
+
+    DTO - Data transfer object 
+
+    POJO 
+
+    Java Beans 
+
+    Spring Beans 
+
+    ..
+    ..
+
+
+
+
+
     Inversion of Control / IOC
         - it is a process / mechanism to delegate the responsibility of creating objects 
             to a "Container"
@@ -102,11 +121,17 @@ Spring Framework
     Dependency Injection
         - Connecting objects with other objects / or “injecting” objects into other objects,
 
-    Spring Container
+    Spring  Container
         - it manages the life cycle of objects. 
             - object creation 
             - initialization 
             - destroy
+
+
+        Spring IOC Container  
+            - Beanfactory
+            - ApplicationContext
+            - WebApplicationContext 
 
     
     Scope types 
@@ -124,7 +149,13 @@ Spring Framework
         5. application 
 
 
-    Spring Bean Definition 
+
+    Spring Bean 
+    -----------
+        - Spring Beans are "Objects" managed by container 
+
+
+    Spring Bean Definition / configuration
     ----------------------
         - it is a configuration to describe how object should be created, initialized, destroyed etc. 
         - Spring container will read this configuration and manage the objects accordingly
@@ -134,8 +165,358 @@ Spring Framework
 
             a. using xml configuration 
 
+                    <beans>
+                        <bean id="employee" class="com.demo.Employee"></bean>
+
+                    </beans>
 
             b. using java configuration 
 
+                    class MyJavaConfiguration {
+
+                        @Bean
+                        public XXXXXX createXXXXX(){
+                            //code to create the object
+                        }
+                    }
 
             c. using java annotations 
+
+                    @Component 
+                    @Service 
+                    @Repository 
+                    @Controller
+
+
+
+        HTTP Methods 
+        ---------------
+            GET 
+
+            POST 
+
+            PUT 
+
+            DELETE 
+
+
+            Streotype annotations 
+            ----------------------
+
+                @Component 
+
+                @Service 
+
+                @Repository 
+
+                @Controller 
+
+
+    Constructor injection 
+
+
+    Setter injection 
+
+
+
+    class Employee {
+
+        private int empId;
+        private String empName;
+        private String city;
+        private double salary;
+
+        //constructor 
+
+        //getters/setters
+    }
+
+    
+
+        option 1 : using xml configuration 
+
+            <bean id="employee" class="com.demo.model.Employee">
+                <constructor-arg  type="" value=""/>
+                <constructor-arg  type="" value=""/>
+                <constructor-arg  type="" value=""/>
+            </bean>
+
+             <bean id="employee" class="com.demo.model.Employee">
+                <property  type="" value=""/>
+                <property  type="" value=""/>
+                <property  type="" value=""/>
+            </bean>
+
+ 
+        option 2 : using java configuration 
+
+                class MyConfiguration {
+
+                    @Bean
+                    public Employee createEmployee(){
+                        return new Employee(xx,"","","");
+                    }
+
+                }
+
+        option 3: using java annotations
+
+             @Component
+             class Employee {
+
+                private int empId;
+                private String empName;
+                private String city;
+                private double salary;
+
+                //constructor 
+
+                //getters/setters
+            }
+
+            @Component
+            class Department {
+
+                private int deptId;
+                private String deptName;
+                
+                private Employee employee;
+
+            }
+
+
+
+    JPA - Java Persistence API 
+    -----
+        - this is specification / standard provided by java to perform persistence 
+
+    
+    JPA Providers 
+    -----------------
+        - Hibernate JPA 
+        - EclipseLink 
+        - Mybatis 
+        - OpenJPA 
+
+
+    Spring Data JPA 
+    ----------------
+
+
+    Entity 
+    --------
+        - Entity is an object which is managed by EntityManager
+
+    
+    EntityManager
+    ---------------
+        - EntityManager is responsible for persisting entities in the db 
+        - 1. use @Entity annotation to the class you want to persist 
+        - 2. use @Id to mark an indentifer field 
+        - 3. Entity class should have no-arg constructor / default constructor
+
+        @Entity 
+        class Employee {
+
+                @Id
+                private int empId;
+                //
+                //
+                //
+
+
+        }
+
+
+
+    Create a new Spring Project that uses Spring Data jpa to perform DB operations 
+
+
+        1. Create a new spring boot project 
+        2. download the modules i.e. spring core, spring data jpa
+        3. Employee - CRUD operations
+
+
+
+
+        Inheritance in java 
+
+
+        interface 
+
+
+                Repository<T> interface 
+                    |
+                CrudRepository<T> interface 
+                    |
+                    |--> <S> save(S entity)
+                    |--> findById(Id id)
+                    |--> void delete(T entity)
+                    |--> long count()
+                    |--> void deleteAll()
+                    |--> Iterable<T> findAll()
+                    |
+                    |
+                 PagingAndSortingRepository<T, ID> interface
+                    |
+                    |-->
+                    |-->
+                    |-->
+                    |
+                    |
+                 JpaRepository<T, ID> interface
+                    |
+                    |-->
+                    |-->
+                    |-->
+                    |
+
+
+
+
+    int age = 20;
+
+    if ( age > 18 ){
+        "licence is allowed"
+    }else {
+        "licence not allowed 
+    }
+
+    age > 18 ?  "licence is allowed" :  "licence not allowed 
+
+
+Spring Framework
+-------------------
+ 
+    - Spring is a very popular JavaEE framework for building web and enterprise applications.
+
+    - spring core, spring beans, context, web, data, boot
+
+    the Spring framework provides comprehensive infrastructure support for developing Java applications.
+
+        It's packed with some nice features like Dependency Injection, and out of the box modules like:
+
+        Spring JDBC
+        Spring MVC
+        Spring Security
+        Spring AOP
+        Spring ORM
+        Spring Test
+
+
+    Spring Boot 
+    -------------
+
+            What Is Spring Boot?
+            Spring Boot is basically an extension of the Spring framework, 
+                which eliminates the boilerplate configurations required for setting up a Spring application.
+
+            Here are just a few of the features in Spring Boot:
+
+            Opinionated ‘starter' dependencies to simplify the build and application configuration
+            Embedded server to avoid complexity in application deployment
+            Metrics, Health check, and externalized configuration
+            Automatic config for Spring functionality – whenever possible
+                    - automatically configure the beans based on presense and absence of some properties 
+                            in application.properties file, or based on the dependencies in the classpath 
+
+
+
+        What are the options to implement the DAO layer 
+        -------------------------------------------------------
+
+            1. using Java JDBC 
+            2. using Spring JDBC Template 
+            3. using ORM frameworks (hibernate, TopLink, iBatis etc.)
+
+            JPA - Java persistence API 
+                - it is a specification / standard for ORM frameworks 
+
+            4. Spring Data JPA 
+                - it is a wrapper around JPA + ORM frameworks (hibernate, EclipseLink, MyBatis etc.) 
+                    to help integrate and develop DAO layer 
+                - offers "Repository" pattern to implement DAO layer 
+
+
+    ===
+        Create a Spring Boot project which uses Spring Data JPA to perform DB operations 
+
+
+
+Spring DATA JPA 
+
+
+    => Entity 
+            - An entity is an object which is managed by EntityManager
+
+            @Entity
+            public class Employee {
+
+                @Id
+                private int empId;
+
+                //
+                //
+                //
+                //
+                //
+
+                //default constructor
+
+            }
+
+    => EntityManager
+            - It is responsible to perform the persistence operations / db operations 
+
+
+    => Repository 
+
+                Repository<T> interface 
+                    |
+                CrudRepository<T> interface 
+                    |
+                    |--> <S> save(S entity)
+                    |--> findById(Id id)
+                    |--> void delete(T entity)
+                    |--> long count()
+                    |--> void deleteAll()
+                    |--> Iterable<T> findAll()
+                    |
+                    |
+                 PagingAndSortingRepository<T, ID> interface
+                    |
+                    |-->
+                    |-->
+                    |-->
+                    |
+                    |
+                 JpaRepository<T, ID> interface
+                    |
+                    |--> <S> save(S entity)
+                    |--> findById(Id id)
+                    |--> void delete(T entity)
+                    |--> long count()
+                    |--> void deleteAll()
+                    |--> Iterable<T> findAll()
+                    |-->
+                    |-->
+                    |
+
+
+
+        Controller 
+        -------------
+            - responsible to process the REQUESTs, @RestController annotation is used to create 
+                a controller class 
+
+
+        Handler Mapping 
+        ------------------
+            - handle mapping is a method to receive the request of a specific type 
+                    i.e. Get mapping, post mapping, put mapping method 
+
+
+                    @GetMapping("/api/employees")
+                    public List<Employee> getEmployee(){
+
+                    }

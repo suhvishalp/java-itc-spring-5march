@@ -13,13 +13,13 @@
 
  	 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost/springdb" />
+		<property name="url" value="jdbc:mysql://localhost/mydb" />
 		<property name="username" value="root" />  
-		<property name="password" value="root" />
+		<property name="password" value="SuhRoot123" />
 		</bean> 
 	
-	 <bean id="accountRepository" class="com.way2learnonline.repository.JdbcAccountRepositoryImpl">
-		<constructor-arg  ref="dataSource"/>
+	 <bean id="accountRepository" class="com.way2learnonline.repository.JdbcAccountRepositoryImpl" autowire="byName">
+		<!-- <constructor-arg  ref="dataSource"/> -->
 	</bean> 
 	
 	<bean id="transactionRepository" class="com.way2learnonline.repository.JdbcTransactionRepositoryImpl">
