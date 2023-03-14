@@ -520,3 +520,22 @@ Spring DATA JPA
                     public List<Employee> getEmployee(){
 
                     }
+
+
+
+        main steps to create REST API Project 
+
+            1. create spring boot project with all the dependencies you want 
+                    i.e. Spring Data JPA, MySQL Driver, DevTools, Spring Web 
+
+            2. define the DB properties in application.properties file 
+
+            3. Create Entity class 
+
+            4. Create Repository 
+
+            5. Create Controller 
+
+            for detailed step and notes use https://hevodata.com/learn/spring-boot-rest-api/ 
+
+            
